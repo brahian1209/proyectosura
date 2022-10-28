@@ -5,3 +5,6 @@ from django.shortcuts import render
 
 def Home (request):
         return render(request,'index.html')
+
+def Medicos(request):
+        return render(request,'Registrosmedicos.html')

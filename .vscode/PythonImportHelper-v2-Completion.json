@@ -57,11 +57,27 @@
         "documentation": {}
     },
     {
+        "label": "Medicos",
+        "importPath": "web.views",
+        "description": "web.views",
+        "isExtraImport": true,
+        "detail": "web.views",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
         "documentation": {}
     },
     {
@@ -272,7 +288,7 @@
         "kind": 5,
         "importPath": "configuracion.configuracion.urls",
         "description": "configuracion.configuracion.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', Home),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', Home, name=\"home\"),\n    path('medicos/', Medicos, name=\"medicos\"),\n]",
         "detail": "configuracion.configuracion.urls",
         "documentation": {}
     },
@@ -283,6 +299,15 @@
         "description": "configuracion.configuracion.wsgi",
         "peekOfCode": "application = get_wsgi_application()",
         "detail": "configuracion.configuracion.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "FormularioMedico",
+        "kind": 6,
+        "importPath": "configuracion.web.Formularios.FormularioMedico",
+        "description": "configuracion.web.Formularios.FormularioMedico",
+        "peekOfCode": "class FormularioMedico(forms.Form):\n    ESPECIALIDADES=(\n        (1, 'Cardiologia'),\n        (2, 'Medico General'),\n        (3, 'Medicina Interna'),\n        (4, 'Ortopedia'),\n        (5, 'Pediatria'), \n    )\n    JORNADAS=(\n        (1, '6 AM - 2 PM'),",
+        "detail": "configuracion.web.Formularios.FormularioMedico",
         "documentation": {}
     },
     {
@@ -299,7 +324,16 @@
         "kind": 2,
         "importPath": "configuracion.web.views",
         "description": "configuracion.web.views",
-        "peekOfCode": "def Home (request):\n        return render(request,'index.html')",
+        "peekOfCode": "def Home (request):\n        return render(request,'index.html')\ndef Medicos(request):\n        return render(request,'Registrosmedicos.html')",
+        "detail": "configuracion.web.views",
+        "documentation": {}
+    },
+    {
+        "label": "Medicos",
+        "kind": 2,
+        "importPath": "configuracion.web.views",
+        "description": "configuracion.web.views",
+        "peekOfCode": "def Medicos(request):\n        return render(request,'Registrosmedicos.html')",
         "detail": "configuracion.web.views",
         "documentation": {}
     },
